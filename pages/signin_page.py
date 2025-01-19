@@ -19,9 +19,6 @@ class SigninPage(BasePage):
         # Assert the element is displayed
         assert sign_in_form.is_displayed(), "Sign In form is not displayed"
 
-    # def terms_and_conditions(self):
-    #     self.find_element(*TERMS_AND_CONDITIONS).click()
-
     def enter_username(self,username):
         self.input_text(username,*USER_NAME)
 
@@ -29,7 +26,7 @@ class SigninPage(BasePage):
         self.input_text(password,*PASSWORD)
 
     def click_signin(self):
-        self.click(*LOGIN_BTN)
+        self.wait_and_click(*LOGIN_BTN)
 
     def verify_login_message(self):
         login_message=self.wait_for_element_visible(*LOGIN_ERROR).text

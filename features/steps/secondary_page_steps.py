@@ -9,7 +9,6 @@ def click_filter(context):
     context.app.secondary_page.filter_button()
 
 
-
 @then('Verify all cards have “for sale” tag')
 def verify_filtered_products(context):
     tags= context.app.secondary_page.get_filtered_products()
@@ -20,7 +19,7 @@ def verify_filtered_products(context):
 
     # Iterate over each tag (WebElement) and verify the status
     for tag in tags:
-        actual_status = tag.text.strip()  # Use .text to get the text content of the WebElement
+        actual_status = tag.text.strip()
         assert expected_status == actual_status, f"Expected status {expected_status}, but got {actual_status} for product"
         # print(f"Product is correctly marked as 'For sale'")
 

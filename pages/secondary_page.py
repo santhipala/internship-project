@@ -24,6 +24,5 @@ class SecondaryPage(BasePage):
         )
         matching_tags = []
         for tag in tags:
-            # if tag.text == 'For sale':
-            matching_tags.append(tag)  # Collect matching tags
+           matching_tags.append(tag)
         return matching_tags
