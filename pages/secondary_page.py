@@ -5,6 +5,7 @@ from pages.base_page import BasePage
 from time import sleep
 
 EXPECTED_URL="/secondary-listings"
+LISTINGS=(By.CSS_SELECTOR,'div.properties-counter.listing')
 FILTER_BTN=(By.CSS_SELECTOR,"div.filter-button")
 FOR_SALE_TAG=(By.CSS_SELECTOR,"div.for-sale-tag div[wized='saleTagMLS']")
 class SecondaryPage(BasePage):
@@ -16,10 +17,12 @@ class SecondaryPage(BasePage):
     def filter_button(self):
          sleep(2)
          # self.driver.implicitly_wait(10)
-         self.wait_and_click(*FILTER_BTN)
+         self.wait_for_element_clickable(*FILTER_BTN).click()
+
+
     def get_filtered_products(self):
         self.wait_for_element_visible(*FOR_SALE_TAG)
-        tags = WebDriverWait(self.driver, 20).until(
+        tags = WebDriverWait(self.driver, 10).until(
             EC.presence_of_all_elements_located(FOR_SALE_TAG)
         )
         matching_tags = []
