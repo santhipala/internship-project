@@ -11,6 +11,7 @@ from pages.signin_page import SigninPage
 from pages.side_menu_page import SideMenuPage
 from pages.secondary_page import SecondaryPage
 from pages.filterpane_page import FilterPanePage
+from pages.filter_results_page import FilterResultsPage
 
 
 class Application:
@@ -18,12 +19,9 @@ class Application:
         self.driver = driver
         self.base_page = BasePage(driver)
         self.main_page = MainPage(driver)
-        # self.header = Header(driver)
+
         self.signin_page = SigninPage(driver)
         self.side_menu_page = SideMenuPage(driver)
         self.secondary_page = SecondaryPage(driver)
         self.filterpane_page = FilterPanePage(driver)
-        # self.cart_page = CartPage(driver)
-        # self.search_results_page = SearchResultsPage(driver)
-        # self.terms_and_conditions_page = TermsAndConditionsPage(driver)
-        # self.help_page = HelpPage(driver)
+        self.filter_results_page = FilterResultsPage(driver)

@@ -16,16 +16,7 @@ class SecondaryPage(BasePage):
 
     def filter_button(self):
          sleep(2)
-         # self.driver.implicitly_wait(10)
          self.wait_for_element_clickable(*FILTER_BTN).click()
 
 
-    def get_filtered_products(self):
-        self.wait_for_element_visible(*FOR_SALE_TAG)
-        tags = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_all_elements_located(FOR_SALE_TAG)
-        )
-        matching_tags = []
-        for tag in tags:
-           matching_tags.append(tag)
-        return matching_tags
+

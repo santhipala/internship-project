@@ -48,6 +48,18 @@ class BasePage:
             message=f'Element by {locator} not clickable'
         ).click()
 
+    def wait_for_element_present(self,*locator):
+        self.wait.until(
+            EC.presence_of_element_located(locator),
+            message=f'Element by {locator} not present'
+        )
+
+    def wait_for_elements_present(self, *locator):
+        self.wait.until(
+            EC.presence_of_all_elements_located(locator),
+            message=f'Element by {locator} not present'
+        )
+
     def verify_partial_url(self, expected_url):
         actual_url = self.driver.current_url
         assert expected_url in actual_url, f'Expected partial url {expected_url} not in actual {actual_url}'
