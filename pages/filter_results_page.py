@@ -6,6 +6,7 @@ from time import sleep
 
 
 FOR_SALE_TAG=(By.CSS_SELECTOR,"div.for-sale-tag div[wized='saleTagMLS']")
+
 class FilterResultsPage(BasePage):
 
     def verify_for_sale_tag(self):

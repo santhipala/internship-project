@@ -7,7 +7,7 @@ from time import sleep
 EXPECTED_URL="/secondary-listings"
 LISTINGS=(By.CSS_SELECTOR,'div.properties-counter.listing')
 FILTER_BTN=(By.CSS_SELECTOR,"div.filter-button")
-FOR_SALE_TAG=(By.CSS_SELECTOR,"div.for-sale-tag div[wized='saleTagMLS']")
+
 class SecondaryPage(BasePage):
 
 
